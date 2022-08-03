@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Migration Competency</title>
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+
+@font-face {
+    font-family: "amazonember";
+    src: url("../Amazon_Typefaces_Complete_Font_Set_Mar2020/EmberDisplay/AmazonEmberDisplay_Bd.ttf");
+}
+    label, button {
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+
+
+        
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 50px;
+        border: none;
+        border-bottom: 1px solid #12293b;
+        box-shadow:0 0 15px 3px rgba(0,0,0,0.06);
+
+
+        }
+  #card-container{
+    margin: auto;
+    width: 70%;
+    /* border: 1px solid rgb(114, 115, 136); */
+    padding: 10px;
+  }
+    .card-header{
+        /* background-color: #232F3E; */
+        background-color: #12293b ;
+        box-sizing: border-box;
+        /* border-radius: 2px; */
+        -moz-box-align: center;
+        padding: 5px;
+        padding-left: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px ;
+    }
+
+    h2{
+        color:aliceblue;
+        font-size: x-large;
+    }
+
+
+    * {
+  box-sizing: border-box;
+}
+
+    body{
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 100px;
+
+} 
+
+
+header{
+  /* width: 100%;
+  height: 200px;
+  background-color: #324370;
+  text-align: center;
+ 
+  top: 0;
+  overflow: hidden; */
+  top: 0;
+  overflow: hidden; 
+  width: 100%;
+  height: 100px;
+  position: relative;
+  position: fixed;
+  grid-area: header;
+  background-color: #12293b;
+  color: white;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  h1{
+    font-size: 32px;
+    color: #fff;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+    /* font-family: amazonember; */
+  
+  }
+  nav{
+    position: absolute;
+    text-align: left;
+    margin-top: 90px;
+    bottom: 0;
+    /* height: 80px; */
+    line-height: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -10px;
+    /* background-color: rgba(251, 248, 248, 0.1); */
+  }
+
+a{
+      color: rgb(254, 252, 252);
+      display: inline-block;
+      padding: 10px 15px;
+      line-height: 1;
+      text-decoration: none;
+      font-weight: 100;
+    
+    }
+
+
+p{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 240px;
+    color: rgb(32, 43, 72);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+button {
+  background-color: #12293b;
+  color: #ffffff;
+  border: navajowhite;
+  padding: 10px 40px;
+  margin-left: 1100px;
+  margin-bottom: 50px;
+  font-size: 17px;
+  /* margin-top: 1px; */
+  font-family: Raleway;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.button-box{
+padding-left: 210px;
+}
+
+.partnername-a{
+    color: rgb(254, 252, 252);
+      display: inline-block;
+      /* padding: 10px 15px; */
+      line-height: 1;
+      font-weight: 100;
+      text-align: right;
+      font-size: small;
+
+
+}
+
+h3{
+    color: rgb(254, 252, 252);
+    font-size: medium;
+      display: inline-block;
+      padding: 9px 5px;
+      line-height: 1;
+      font-weight: 100;
+      text-align: right;
+}
+
+.tag-partnername{
+box-sizing: border-box;
+}
+
+span{
+    font-size: x-small;
+    margin-left: 60px;
+    margin-bottom: 50px;
+
+}
+
+.checkbox{
+  margin-left: 110px;
+}
+
+.label{
+  font-size: medium;
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+input:required + span:after {
+  content: "Required";
+}
+/* 
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+} */
+    </style>
+
+<script>
+
+
+function handleSubmit () {
+  
+    const reqcheck1 = document.getElementById('reqcheck1').value;
+    const reqcheck2 = document.getElementById('reqcheck2').value;
+    const Requirement1 = document.getElementById('Requirement1').value;
+    const Requirement2 = document.getElementById('Requirement2').value;
+    const Requirement3 = document.getElementById('Requirement3').value;
+    const Requirement4 = document.getElementById('Requirement4').value;
+    const Requirement5 = document.getElementById('Requirement5').value;
+    const Requirement6 = document.getElementById('Requirement6').value;
+
+
+    sessionStorage.setItem("reqcheck1", reqcheck1);
+    sessionStorage.setItem("reqcheck2", reqcheck2);
+    sessionStorage.setItem("Requirement1", Requirement1);
+    sessionStorage.setItem("Requirement2", Requirement2);
+    sessionStorage.setItem("Requirement3", Requirement3);
+    sessionStorage.setItem("Requirement4", Requirement4);
+    sessionStorage.setItem("Requirement5", Requirement5);
+    sessionStorage.setItem("Requirement6", Requirement6);
+
+    return;
+
+}
+
+window.addEventListener('load', () => {
+
+
+const partnername = sessionStorage.getItem('partnername');
+
+document.getElementById("partnername").innerHTML = partnername;
+
+
+
+})
+    
+
+
+// var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.display === "block") {
+//       panel.style.display = "none";
+//     } else {
+//       panel.style.display = "block";
+//     }
+//   });
+// }
+</script>
+
+</head>
+
+<body>
+<header class="header">
+    <h1>AWS Gap Analysis Tool</h1>
+    <nav>
+      
+      <a>Step 2: Identify the current situation<a id="partnername-a"><h3 id="partnername"></h3></a></a>
+      
+    </nav>
+
+    
+  </header>
+
+
+    <p>AWS Service Delivery Program Prerequisites | Amazon RDS </p>
+    <!-- <span>The following items will be validated by the AWS PMSA</span> -->
+    <hr>
+        <div id="card-container">
+          <div class="card">
+                <div class="card-header">
+                    <h2>APN Program Requirements</h2>
+                </div>
+
+                
+                <div class="card-body">   
+                    <form action="/action_page.php"> 
+                        <!-- <div>
+        
+                            <input type="checkbox" id="Guidelines" name="Requirement" >
+                            <label for="req1"> Program Guidelines</label><br>
+                            <span>The AWS Partner must read the Program Guidelines and Definitions before applying to the Migration Competency Program</span><br>
+        
+                        </div> -->
+                        <div>
+        
+                            <input type="checkbox" id="reqcheck1" name="Requirement" required >
+                            <label for="req2"> Services Path Membership</label><br>
+                            <span class="checkbox">- Partner must at the Validated or Differentiated stage within the Services Path</span><br>
+
+        
+                       </div>
+                    </form>
+                </div>
+              </div>
+           
+        
+              <form id="Requirements">
+              <div class="card2">
+                <div class="card-header">
+                  
+                    <h2>AWS Customer Case Studies</h2>
+                </div>
+
+                <div class="card-body">   
+                    <form> 
+                        <label>How many AWS Customer Case Studies does the partner submitted ?</label><br>
+                        <input type="textbox" id="Requirement1" required><br>
+                        <span >- Must sumbit 2 unique examples of customers using the specific Amazon RDS practice under review</span> <br>
+                         <span>- Each customer examples must describe deployments that have been performed within the past 18 months</span><br><br>
+
+
+                        <label >Does the partner submit the Architecture Diagrams ?</label><br>
+                        <input type="textbox" id="Requirement2" required><br>
+                        <span>- Submitted case studies must include architecture diagrams</span><br>
+
+                      </form>
+                </div>
+              </div>
+        
+        
+        
+        
+              <div class="card3">
+                <div class="card-header">
+                    <h2>Amazon RDS Practice and Focus</h2>
+                </div>
+                <div class="card-body">   
+                    <form> 
+                        <label >AWS Partner Microsite</label> <br><br>
+                        <label>Dose The partner have a Microsite?</label><br>
+                        <input type="textbox" id="Requirement3" ><br>
+                        <span>- AWS Partner must have an AWS-branded microsite that highlights their AWS practice</span><br>
+                        <span>- Microsite should include mention of their expertise with Amazon RDS</span><br><br>
+
+
+                        <label>URL : </label><br>
+                        <input type="textbox" id="url" ><br><br>
+                      </form>
+                </div>
+              </div>
+        
+              <div class="card4">
+                <div class="card-header">
+                    <h2>AWS Partner Self-Assessment</h2>
+                </div>
+                <div class="card-body">           
+                    <form> 
+                        <label>Dose the partner complate the Self-Assessment Spreadsheet for each case study?</label>
+                        <input type="textbox" id="Requirement4" ><br>
+                        <span>- All sections of the Self-Assessment Spreadsheet must be completed for each case study and spreadsheet must be attached to the associated application in AWS Partner Central.</span><br>
+
+                   
+    
+                      </form>
+
+    
+        
+              </div>
+        
+          </div>
+
+
+          <div class="card5">
+            <div class="card-header">
+                <h2>RDS Prerequisites</h2>
+            </div>
+            <div class="card-body">           
+                <form> 
+
+                    <label id="label">Database Engine Specialty</label><br><br>
+                    <label>The first database engine specialty</label><br>
+                    <input type="textbox" id="Requirement5" ><br>
+                    <span>- Must be 2 unique examples of customers using the specific Amazon RDS practice</span><br><br>
+                    <span>- Must be 1 example per customers</span><br><br>
+
+
+
+                    <label>The additional engine specialty</label><br>
+                    <input type="textbox" id="Requirement6"><br>
+                    <span>- Allowed to submit case studies from the same customer </span><br>
+                    <span>- All case studies submitted should address unique workloads</span><br><br>
+
+                    <input type="checkbox" id="reqcheck2" name="Requirement" >
+                    <label>The partner have a case study summary for each case study</label><br>
+                    <span class="checkbox">- Attach to each Case Study submitted in AWS Partner Central</span><br><br>
+
+
+        
+        
+                  </form>
+
+
+    
+          </div>
+    
+      </div>
+        </div>
+      </div>
+<!-- 
+      <button class="accordion">RDS Prerequisites</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  
+  </div> -->
+    </div>  
+
+
+
+
+
+    
+    <a href="GapAnalysisReport.html"><button type="submit" href="GapAnalysisReport.html" onclick="handleSubmit()">Next: Step 3</button></a>
+
+    <!-- <script src="js/migrationcompetency.js"></script> -->
+</body>
+
+</html>

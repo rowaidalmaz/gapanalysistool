@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+  @import "compass/css3";
+
+@import "compass/css3";
+@import "compass/reset";
+
+body{
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 130px;
+
+} 
+
+
+header{
+  width: 100%;
+  height: 200px;
+  background-color: #324370;
+  text-align: center;
+  position: relative;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+  h1{
+    font-size: 32px;
+    color: #fff;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+  
+  }
+  nav{
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    background-color: rgba(251, 248, 248, 0.1);
+  }
+
+a{
+      color: rgb(254, 252, 252);
+      display: inline-block;
+      padding: 10px 15px;
+      line-height: 1;
+      text-decoration: none;
+      font-weight: 100;
+    
+    }
+
+
+/* p{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(40, 61, 118);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+} */
+
+button {
+  background-color: #324370;
+  color: #ffffff;
+  border: navajowhite;
+  padding: 10px 40px;
+  font-size: 17px;
+  /* margin-top: 1px; */
+  font-family: Raleway;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.button-box{
+padding-left: 210px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#regForm {
+  background-color: #eeeaea;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 450px;
+  height: 450px;
+  min-width: 300px;
+  border-radius: 10px;
+  /* box-shadow:; */
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 50%;
+  font-size: 12px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.textbox2{
+  padding-bottom: 50px;
+}
+.p{
+  margin-bottom: 10px;
+}
+.partnername{
+  box-sizing: 100px;
+}
+
+.d-none{
+  display: none;
+
+
+}
+
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: rgb(253, 249, 249);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: rgb(255, 253, 253);
+  color: rgb(229, 229, 229);
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
+
+
+</style>
+<body>
+
+
+
+<header>
+  <h1>AWS Gap Analysis Tool</h1>
+  <nav>
+    <a>Step 1: Select The Designation Program</a>
+  </nav>
+</header>
+
+
+<form id="regForm">
+  <div class="textbox1">Partner Name
+    <p><input  type="textbox" id="partnername" placeholder="Partner Name" oninput="this.className = ''" name="Pname"></p>
+    </div>
+
+    <div class="textbox2"> The designation Program
+
+      <select id="op" onchange="enableProgram(this)">
+        <option  value="">Please select</option>
+        <option value="1" >competency program</option>
+        <option value="0" >AWS Service Delivery Program</option>
+      </select>
+
+        
+
+  <select id="Competencies"  class="d-none">
+
+    <option value="migration" >migration ompetency</option>
+    <option value="Security" >Security ompetency</option>
+    <option value="Retail" >Retail ompetency</option>
+    <option value="Devop" >Devop ompetency</option>
+    <option value="workload">Microsoft workload ompetency</option>
+    
+  </select>
+
+  <select id="SDP-program" class="d-none">
+    <option value="STORGE">STORGE PROGRAM</option>
+  </select>
+      </div>
+      <div id="button-box">
+        <button type="button" id="nextBtn" onclick="getval(),handleSubmit()">  Next: Step 2   </button>
+      </div>
+
+
+ 
+</form>
+
+
+<script>
+ function handleSubmit () {
+    const partnername = document.getElementById('partnername').value;
+    sessionStorage.setItem("partnername", partnername);
+ 
+    return;
+
+}
+    
+  
+      function enableProgram(option){
+        console.log(option.value);
+        if(option.value== 1){
+          document.getElementById('Competencies').classList.remove('d-none');
+          document.getElementById('SDP-program').classList.add('d-none');
+        }
+        if(option.value== 0){
+          document.getElementById('SDP-program').classList.remove('d-none');
+          document.getElementById('Competencies').classList.add('d-none');
+
+        }
+      };
+
+
+      function getval() {
+       var sel = document.getElementById('Competencies');
+       var sel2 = document.getElementById('SDP-program');
+
+       if (sel.value == "migration") {
+          window.location.href = "migrationcompetency.html";
+       }
+       if (sel.value == "Security") {
+          window.location.href = "SDP.html";
+       }
+       if (sel.value == "Retail") {
+          window.location.href = "migrationcompetency.html";
+       }
+       if (sel.value == "Devop") {
+          window.location.href = "SDP.html";
+       }
+       if (sel.value == "workload") {
+          window.location.href = "migrationcompetency.html";
+
+       if (sel2.value == "STORGE") {
+          window.location.href = "SDP.html";
+      
+       }
+  }
+}
+
+$(function(){
+  $(window).scroll(function(){
+    var winTop = $(window).scrollTop();
+    if(winTop >= 30){
+      $("body").addClass("sticky-header");
+    }else{
+      $("body").removeClass("sticky-header");
+    }//if-else
+  });//win func.
+});//ready func.
+</script>
+
+</body>
+</html>

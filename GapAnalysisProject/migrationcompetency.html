@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Migration Competency</title>
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+    label, button {
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+  #card-container{
+    margin: auto;
+    width: 70%;
+    /* border: 1px solid rgb(114, 115, 136); */
+    padding: 10px;
+  }
+    .card-header{
+        /* background-color: #232F3E; */
+        background-color: #324370 ;
+        box-sizing: border-box;
+        border-radius: 4px;
+        -moz-box-align: center;
+        padding: 5px;
+        padding-left: 20px;
+        margin-bottom: 10px ;
+    }
+
+    h2{
+        color:aliceblue;
+    }
+
+
+    * {
+  box-sizing: border-box;
+}
+
+    body{
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 100px;
+
+} 
+
+
+header{
+  width: 100%;
+  height: 200px;
+  background-color: #324370;
+  text-align: center;
+  position: relative;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+  h1{
+    font-size: 32px;
+    color: #fff;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+  
+  }
+  nav{
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    background-color: rgba(251, 248, 248, 0.1);
+  }
+
+a{
+      color: rgb(254, 252, 252);
+      display: inline-block;
+      padding: 10px 15px;
+      line-height: 1;
+      text-decoration: none;
+      font-weight: 100;
+    
+    }
+
+
+p{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(40, 61, 118);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+button {
+  background-color: #324370;
+  color: #ffffff;
+  border: navajowhite;
+  padding: 10px 40px;
+  margin-left: 1100px;
+  margin-bottom: 50px;
+  font-size: 17px;
+  /* margin-top: 1px; */
+  font-family: Raleway;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.button-box{
+padding-left: 210px;
+}
+
+.partnername-a{
+    color: rgb(254, 252, 252);
+      display: inline-block;
+      /* padding: 10px 15px; */
+      line-height: 1;
+      font-weight: 100;
+      text-align: right;
+      font-size: small;
+
+
+}
+
+h3{
+    color: rgb(254, 252, 252);
+    font-size: medium;
+      display: inline-block;
+      padding: 9px 5px;
+      line-height: 1;
+      font-weight: 100;
+      text-align: right;
+}
+
+.tag-partnername{
+box-sizing: border-box;
+}
+
+span{
+    font-size: x-small;
+    margin-left: 90px;
+}
+    </style>
+
+<script>
+
+
+function handleSubmit () {
+    const currentstate1 = document.getElementById('currentstate1').value;
+    const currentstate2 = document.getElementById('currentstate2').value;
+    const currentstate3 = document.getElementById('currentstate3').value;
+    const currentstate4 = document.getElementById('currentstate4').value;
+    const currentstate5 = document.getElementById('currentstate5').value;
+    const currentstate6 = document.getElementById('currentstate6').value;
+
+    
+    sessionStorage.setItem("currentstate1", currentstate1);
+    sessionStorage.setItem("currentstate2", currentstate2);
+    sessionStorage.setItem("currentstate3", currentstate3);
+    sessionStorage.setItem("currentstate4", currentstate4);
+    sessionStorage.setItem("currentstate5", currentstate5);
+    sessionStorage.setItem("currentstate6", currentstate6);
+
+    return;
+
+}
+
+window.addEventListener('load', () => {
+
+
+const partnername = sessionStorage.getItem('partnername');
+
+document.getElementById("partnername").innerHTML = partnername;
+
+
+
+})
+    
+</script>
+
+</head>
+
+<body>
+<header>
+    <h1>AWS Gap Analysis Tool</h1>
+    <nav>
+      
+      <a>Step 2: Identify the current situation<a id="partnername-a"> Gap Analysis for<h3 id="partnername"></h3></a></a>
+
+      <div id="tag-partnername">
+        <a id="partnername-a"> Gap Analysis for<h3 id="partnername"></h3></a> 
+      </div>
+      
+    </nav>
+  </header>
+    <p>AWS Migration Competency Program Prerequisites</p>
+    <!-- <hr class="divider"> -->
+        <div id="card-container">
+          <div class="card">
+                <div class="card-header">
+                    <h2>APN Program Membership</h2>
+                </div>
+                <div class="card-body">   
+                    <form action="/action_page.php"> 
+                        <div>
+        
+                            <input type="checkbox" id="Guidelines" name="Requirement" >
+                            <label for="req1"> Program Guidelines</label><br>
+                            <span>The AWS Partner must read the Program Guidelines and Definitions before applying to the Migration Competency Program</span>
+        
+                        </div>
+                        <div>
+        
+                            <input type="checkbox" id="Membership" name="Requirement" >
+                            <label for="req2"> Services Path Membership</label><br>
+                           <span>Partner must at the Validated or Differentiated stage within the Services Path</span>
+
+        
+                       </div>
+                      <div>   
+                        <input type="checkbox" id="Tier" name="Requirement" >
+                        <label for="req3">AWS Partner Tier</label><br>
+                        <span>Partner must be an AWS Advanced or Premier Tier Partner.</span>
+
+                      </div>
+                    </form>
+                </div>
+              </div>
+           
+        
+              <form id="Requirements">
+              <div class="card2">
+                <div class="card-header">
+                    <h2>Example AWS Customer Deployments</h2>
+                </div>
+
+                <div class="card-body">   
+                    <form> 
+                        <label>Production Migration AWS Customer Examples</label>
+                        <input type="textbox" id="currentstate1"><br>
+                        <span>Require: Four (4) unique examples of Migration projects executed for four (4) unique AWS customers.</span> <br>
+                        <label>Publicly Available Customer Examples</label>
+                        <input type="textbox" id="currentstate2" ><br>
+                        <span>Require: At least two (2) of the provided customer examples must have a publicly available</span> 
+
+                      </form>
+                </div>
+              </div>
+        
+        
+        
+        
+              <div class="card3">
+                <div class="card-header">
+                    <h2>AWS Migration Practice and Focus</h2>
+                </div>
+                <div class="card-body">   
+                    <form> 
+                        <label>Do you have a Microsite?</label>
+                        <!-- <label>AWS Partner Microsite</label> -->
+                        <input type="textbox" id="currentstate3" ><br><br>
+                        <label>AWS Migration Public Content</label>
+                        <input type="textbox" id="currentstate4" ><br>
+                        <span>Require:At least three (3) examples of materials published within the last 12 months</span>
+                      </form>
+                </div>
+              </div>
+        
+              <div class="card4">
+                <div class="card-header">
+                    <h2>Migration Prerequisites</h2>
+                </div>
+                <div class="card-body">   
+                 <!-- should cahnge the page /action_page.php-->
+        
+                    <form> 
+                        <label>Migration Specific Customer Example Requirements</label>
+                        <input type="textbox" id="currentstate5" ><br>
+                        <span>Require: 4 (being 2 public) and up to 8 customer examples in total to meet all the customer example requirements.</span>
+                        <br><br>
+                        <label>AWS Migration Certified Personnel</label><br><br>
+                        <label>AWS Associate, Professional or Specialty Certified Individuals</label>
+                        <input type="textbox" id="currentstate6"><br>
+                        <span>Require: AWS Partner must have ≥ 15 AWS Associate, Professional or Specialty Certified Individuals
+                            Of which</span>
+                       <label> AWS Professional or Specialty Certified Individuals</label>
+                        <input type="textbox" id="currentstate7"><br>
+                        <span>Require:AWS Partner must have ≥ 8 must be AWS Professional or Specialty Certified Individuals</span>
+                
+                      </form>
+
+    
+        
+              </div>
+        
+          </div>
+        </div>
+      </div>
+
+
+    </div>  
+
+
+    
+    <a href="GapAnalysisReport.html">
+      <button type="submit" href="GapAnalysisReport.html" onclick="handleSubmit()">Next: Step 3</button>
+    </a>
+
+    <!-- <script src="js/migrationcompetency.js"></script> -->
+</body>
+
+</html>

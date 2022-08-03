@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gap Analysis Rep</title>
+    <!-- Add some CSS to change client UI -->
+<style>
+  
+  label, button {
+      color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+    }
+ 
+ /* table {
+  font-family: arial, sans-serif,#232F3E;
+  border-collapse:separate;
+  width: 500px;
+  position: center;
+} */
+
+/* td, th {
+  border: 1px solid #060606 ;
+  border-radius: 5px;
+  text-align: left;
+  padding: 20px;
+  padding-left: 10px;
+  size: 30px;
+} */
+
+/* tr:nth-child(even) {
+  background-color: #ffffff;
+}
+* {
+  box-sizing: border-box;
+} */
+
+/* table th, table td{
+text-align: center;
+font-family: arial, sans-serif,#232F3E;
+border-collapse:collapse;
+
+width: 200px;
+position: center;
+margin-top: 30px;
+}
+tbody tr:nth-child(even) {
+background: #e8e7e1;
+} */
+/* body{
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 0px;
+  
+}  */
+table {
+  margin-top: 120px;
+  margin-left: 20%;
+  border-collapse: collapse;
+  width: 60%;
+
+ 
+}
+
+th, td {
+  margin-top: 50px;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+
+body{
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 100px;
+  margin: 0px;
+
+} 
+
+/* header{
+  width: 100%;
+  height: 200px;
+  background-color: #324370;
+  text-align: center;
+  position: relative;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+} */
+  h1{
+    font-size: 32px;
+    color: #fff;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-weight: 900;
+  
+  }
+  /* nav{
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    background-color: rgba(251, 248, 248, 0.1);
+  } */
+
+a{
+      color: rgb(254, 252, 252);
+      display: inline-block;
+      padding: 10px 15px;
+      line-height: 1;
+      text-decoration: none;
+      font-weight: 100;
+    
+    }
+
+
+p{
+    font-size: 14px;
+    text-align: left;
+    color: rgb(0, 2, 7);
+    line-height: 4px;
+    font-weight: 10;
+}
+
+button {
+  background-color: #324370;
+  color: #ffffff;
+  border: navajowhite;
+  padding: 10px 40px;
+  margin-left: 1200px;
+  margin-bottom: 60px;
+  font-size: 17px;
+  /* margin-top: 1px; */
+  font-family: Raleway;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.button-box{
+padding-left: 210px;
+}
+/* 
+table{
+  width: 700px;
+
+  margin-top: 150px;
+  margin-left: 350px;
+  margin-bottom: 100px;
+
+}
+
+th {
+  height:100px;
+} */
+header{
+  /* width: 100%;
+  height: 200px;
+  background-color: #324370;
+  text-align: center;
+ 
+  top: 0;
+  overflow: hidden; */
+  top: 0;
+  overflow: hidden; 
+  width: 100%;
+  height: 100px;
+  position: relative;
+  position: fixed;
+  grid-area: header;
+  background-color: #12293b;
+  color: white;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav{
+    position: absolute;
+    text-align: left;
+    margin-top: 90px;
+    bottom: 0;
+    /* height: 80px; */
+    line-height: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -10px;
+    /* background-color: rgba(251, 248, 248, 0.1); */
+  }
+.text{
+  font-size: 10;
+}
+
+
+  
+</style>
+
+<script>
+
+// define the callAPI function that takes a parameters
+var callAPI = (remaining1,remaining2,remaining3,remaining4,remaining5,remaining6,remaining7,remaining8)=>{
+        // instantiate a headers object
+        var myHeaders = new Headers();
+        // add content type header to object
+        myHeaders.append("Content-Type", "application/json");
+        // using built in JSON utility package turn object to string and store in a variable
+
+        // Write about this and how to send data to dynamoDB from API 
+        var state1 = JSON.stringify({"remaining1":remaining1,"remaining2":remaining2,"remaining3":remaining3,"remaining4":remaining4,"remaining5":remaining5,
+        "remaining6":remaining6,"remaining7":remaining7,"remaining8":remaining8});
+     
+    
+
+        // create a JSON object with parameters for API call and store in a variable
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body:state1,
+            redirect: 'follow'
+        };
+        // make API call with parameters and use promises to get response
+        fetch("https://x83uru4ey3.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
+        .then(response => response.text())
+        .then(result => alert(JSON.parse(result).body))
+        .catch(error => console.log('error', error));
+    }
+
+
+
+
+    
+
+window.addEventListener('load', () => {
+
+
+const partnername = sessionStorage.getItem('partnername');
+
+document.getElementById("partnername").innerHTML = partnername;
+
+
+
+})
+
+
+window.addEventListener('load', () => {
+
+
+const reqcheck1 = sessionStorage.getItem('reqcheck1');
+const Requirement1 = sessionStorage.getItem('Requirement1');
+const Requirement2 = sessionStorage.getItem('Requirement2');
+const Requirement3 = sessionStorage.getItem('Requirement3');
+const Requirement4 = sessionStorage.getItem('Requirement4');
+const Requirement5 = sessionStorage.getItem('Requirement5');
+const Requirement6 = sessionStorage.getItem('Requirement6');
+const reqcheck2 = sessionStorage.getItem('reqcheck2');
+
+
+document.getElementById("remaining1").innerHTML = reqcheck1.checked;
+document.getElementById("remaining2").innerHTML = Requirement1;
+// document.getElementById("remaining3").innerHTML = Requirement2;
+document.getElementById("remaining4").innerHTML = Requirement3;
+document.getElementById("remaining5").innerHTML = Requirement4;
+// document.getElementById("remaining6").innerHTML = Requirement5;
+document.getElementById("remaining7").innerHTML = Requirement6;
+document.getElementById("remaining8").innerHTML = reqcheck2.checked;
+
+
+
+
+
+// current 1
+if(Requirement1<2){
+    var subcurrentstate1 = 2-parseInt(Requirement1);
+    document.getElementById("remaining2").innerHTML = subcurrentstate1;
+    document.getElementById("nextstep2").innerHTML = "The partner must complate the case study requerimnt";
+
+}
+if(Requirement1==0){
+    document.getElementById("remaining2").innerHTML = 0;
+    document.getElementById("nextstep2").innerHTML = "The partner must complate the case study requerimnt";
+
+}
+
+if (Requirement1>=2) {
+    document.getElementById("remaining2").innerHTML = Requirement1;
+    document.getElementById("nextstep2").innerHTML = "Completed";
+}
+ 
+// current 2
+// if(current2<2){
+//     var subcurrentstate2 = 2 - parseInt(current2) ;
+//     document.getElementById("remaining2").innerHTML = subcurrentstate2;
+
+// }
+// if (current2>=2) {
+//     document.getElementById("remaining2").innerHTML = "Complete!";
+// }
+ 
+// current 3
+// if(current3<1){
+//     var subcurrentstate3 = 1 - parseInt(current3);
+//     document.getElementById("remaining3").innerHTML = subcurrentstate3;
+
+// }
+// if (current3>=1) {
+//     document.getElementById("remaining3").innerHTML = "Complete!";
+// }
+
+// current 4
+// if(current4<3){
+//     var subcurrentstate4 = 3 - parseInt(current4);
+//     document.getElementById("remaining4").innerHTML = subcurrentstate4;
+// }
+// if (current4>=3) {
+//     document.getElementById("remaining4").innerHTML = "Complete!";
+// }
+
+//current 5
+if(Requirement5<2){
+    var subcurrentstate5 = 2- parseInt(Requirement5) ;
+    document.getElementById("remaining6").innerHTML = subcurrentstate5;
+}
+if(Requirement5==0){
+    document.getElementById("remaining6").innerHTML = 0;
+    document.getElementById("nextstep6").innerHTML = "The partner must complate the case study requerimnt";
+
+}
+if (Requirement5>=2) {
+    document.getElementById("remaining6").innerHTML = Requirement5;
+    document.getElementById("nextstep6").innerHTML = "Completed";
+}
+
+
+// // current 6
+// if(Requirement6<2){
+//     var subcurrentstate6 = 2 - parseInt(Requirement6);
+//     document.getElementById("remaining6").innerHTML = subcurrentstate6;
+// }
+// if (Requirement6>=2) {
+//     document.getElementById("remaining6").innerHTML = "Complete!";
+// }
+
+
+
+
+
+
+
+})
+
+  
+
+</script>
+
+
+
+</head>
+
+<body>
+
+
+  <header class="header">
+    <h1>AWS Gap Analysis Tool</h1>
+    <nav>
+      <a>Step 3: Gap Analysis Report <a id="partnername-a"><h3 id="partnername"></h3></a></a>
+    </nav>
+  </header>
+
+
+
+    <table id="table" width="50%" cellspacing="0">
+
+      <thead>
+        <th width="400">Requirements</th>
+        <!-- send the surrent state from textbox in migration comptency page to report page -->
+        <th width="250">Current</th>
+        <!-- constant values -->
+        <!-- <th width="100">Goal</th> -->
+        <!-- recived from textbox in migration comptency page to report page  -->
+        <th width="300">Next step</th>
+        </thead>
+
+
+        <tbody>
+          <tr>
+            <td>Services Path Membership</td>
+            <!-- <td>
+              <p id="req-check1"></p>
+            </td> -->
+            <td>
+              <p id="remaining1"></p>
+            </td> 
+
+            <td>
+              <p id="nextstep1"></p>
+            </td> 
+          </tr>
+
+
+
+      <tr>
+        <td>AWS Customer Case Studies</td>
+        <!-- <td>
+          <p id="Requirement1"></p>
+        </td> -->
+        <td>
+           <p id="remaining2"></p><p>of 2</p>
+        </td>
+        <td>
+          <p id="nextstep2"></p>
+        </td> 
+      </tr>
+
+
+
+      <tr>
+        <td>The Architecture Diagrams</td>
+        <!-- <td>
+          <p id="Requirement2"></p>
+        </td> -->
+        <td >
+          <p id="remaining3"></p>
+        </td>
+        <td>
+          <p id="nextstep3"></p>
+        </td> 
+      </tr>
+
+
+
+      <tr>
+        <td>AWS Partner Microsite</td>
+        <!-- <td>
+          <p id="Requirement3"></p>
+        </td> -->
+        <td>
+          <p id="remaining4"></p>
+        </td>
+        <td>
+          <p id="nextstep4"></p>
+        </td> 
+      </tr>
+
+
+
+      <tr>
+        <td>AWS Partner Self-Assessment</td>
+        <!-- <td>
+          <p id="Requirement4"></p>
+        </td> -->
+        <td>
+          <p id="remaining5"></p>
+        </td>
+        <td>
+          <p id="nextstep5"></p>
+        </td> 
+      </tr>
+
+
+
+      <tr>
+        <td>The first database engine specialty</td>
+        <!-- <td>
+          <p id="Requirement5"></p>
+        </td> -->
+        <td>
+          <p id="remaining6"></p><p>of 2</p>
+        </td>
+        <td>
+          <p id="nextstep6"></p>
+        </td> 
+      </tr>
+
+
+      <tr>
+          <td>The additional engine specialty</td>
+          <!-- <td>
+             <p id="Requirement6"></p>
+          </td> -->
+          <td>
+                <p id="remaining7"></p>
+          </td>
+          <td>
+            <p id="nextstep7"></p>
+          </td> 
+      </tr>
+
+
+
+        <tr>
+          <td>Case study summary</td>
+          <!-- <td>
+           <p id="req-check2"></p>
+          </td> -->
+          <td>
+          <p id="remaining8"></p>
+          </td>
+          <td>
+            <p id="nextstep8"></p>
+          </td> 
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="GapAnalysisReport.html">
+
+    <button  type="button" href="GapAnalysisReport.html" onclick="callAPI(document.getElementById('remaining1').value,document.getElementById('remaining1').value,document.getElementById('remaining2').value,document.getElementById('remaining3').value,document.getElementById('remaining4').value,
+    document.getElementById('remaining5').value,document.getElementById('remaining6').value,document.getElementById('remaining7').value,document.getElementById('remaining8').value)">Save</button>
+
+    </a>
+    </form>
+
+
+
+
+
+
+</body>
+</html>
